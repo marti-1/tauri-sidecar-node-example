@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pkg:linux": "pkg index.js --targets node18-linux-x64 --output ../src-tauri/binaries/sidecar-$(rustc --print host-tuple)"
+    "pkg:linux": "pkg index.js --targets node18-linux-x64 --output ../src-tauri/binaries/sidecar-$(rustc --print host-tuple)",
+    "pkg:windows": "pkg index.js --targets node18-win-x64 --output ../src-tauri/binaries/sidecar-x86_64-pc-windows-msvc.exe"
   },
   "devDependencies": {
     "@yao-pkg/pkg": "^6.12.0"
