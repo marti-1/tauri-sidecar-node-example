@@ -10,6 +10,12 @@ pub fn run() {
             
             let sidecar_command = app.shell().sidecar("sidecar").unwrap();
             let (mut _rx, _child) = sidecar_command.spawn().unwrap();
+
+            std::process::Command::new("google-chrome")
+                // .arg("--new-window")
+                .arg("http://localhost:3000")
+                .spawn()
+                .expect("Failed to open chrome process");
             
             Ok(())
         })
