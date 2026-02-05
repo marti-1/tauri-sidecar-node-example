@@ -1,11 +1,11 @@
-const command = process.argv[2];
+const express = require('express');
+const app = express();
+const port = 3000;
 
-switch (command) {
-  case 'hello':
-    const message = process.argv[3];
-    console.log(`Hello ${message}!`);
-    break;
-  default:
-    console.error(`unknown command ${command}`);
-    process.exit(1);
-}
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
